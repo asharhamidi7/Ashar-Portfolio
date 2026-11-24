@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <meta name="description" content="Developer portfolio">
+  <meta name="theme-color" content="#0a0d13">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#home" class="brand" aria-label="Home">
+      <span class="brand-mark" id="brandMark">S</span>
+      <span class="brand-name"><span id="brandFirst"></span> <em id="brandLast"></em></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="links" id="links">
+      <a href="#home" data-link="home">Home</a>
+      <a href="#about" data-link="about">About</a>
+      <a href="#skills" data-link="skills">Skills</a>
+      <a href="#work" data-link="work">Work</a>
+      <a href="#education" data-link="education">Education</a>
+      <a href="#certificates" data-link="certificates">Certificates</a>
+      <a href="#contact" data-link="contact">Contact</a>
+      <a href="#" class="pill" id="navResume" target="_blank" rel="noopener">Resume</a>
+      <a href="#contact" class="pill pill-hot">Let's talk</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section class="hero" id="home">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-copy">
+        <p class="badge" id="badge"></p>
+        <h1 class="name"><span id="nameFirst"></span><span class="hot" id="nameLast"></span></h1>
+        <p class="role"><span class="role-arrow">▸</span><span id="roleText"></span><span class="caret"></span></p>
+        <p class="tagline" id="tagline"></p>
+        <div class="cta">
+          <a href="#work" class="btn btn-hot">View projects</a>
+          <a href="#" class="btn btn-ghost" id="viewResume" target="_blank" rel="noopener">View resume</a>
+          <a href="#" class="btn btn-quiet" id="downloadResume" download>Download PDF</a>
+        </div>
+        <div class="socials" id="heroSocials"></div>
+      </div>
+
+      <div class="hero-card-wrap" id="tiltWrap">
+        <div class="hero-card" id="tiltCard">
+          <div class="card-top"><span>ID CARD</span><span>ONLINE</span></div>
+          <img id="heroPhoto" alt="Portrait" width="500" height="500">
+          <div class="card-foot">
+            <strong id="cardTitle"></strong>
+            <span id="cardSub"></span>
+          </div>
+        </div>
+        <div class="chip chip-a" id="chipA"></div>
+        <div class="chip chip-b" id="chipB"></div>
+        <p class="card-hint">Move your cursor over the card</p>
+      </div>
+
+      <a href="#about" class="scroll" aria-label="Scroll down"><span>Scroll</span><i></i></a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="ghost" aria-hidden="true">ABOUT</div>
+      <h2 class="title">About <span class="hot">me</span></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <div id="aboutParas"></div>
+          <div class="stats" id="stats"></div>
+        </div>
+        <aside class="panel focus">
+          <p class="panel-label" id="focusTitle"></p>
+          <h3 id="focusHead"></h3>
+          <ul id="focusList"></ul>
+          <dl id="facts"></dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="ghost" aria-hidden="true">SKILLS</div>
+      <h2 class="title">Skills<span class="hot">.</span></h2>
+      <p class="lead">The tools I use to design, build and ship.</p>
+      <div class="skills-grid">
+        <div class="skill-groups" id="skillGroups"></div>
+        <div class="rings" id="rings"></div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section" id="work">
+      <div class="ghost" aria-hidden="true">WORK</div>
+      <h2 class="title">Selected <span class="hot">work</span></h2>
+      <p class="lead">Each project is a small case study in turning a messy problem into something clear.</p>
+      <div class="toolbar">
+        <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+        <input type="search" id="search" placeholder="Search tech or project" aria-label="Search projects">
+      </div>
+      <div class="projects" id="projects"></div>
+      <p class="empty" id="emptyProjects" hidden>No projects match that search.</p>
+    </section>
+
+    <!-- GITHUB -->
+    <section class="section" id="activity">
+      <div class="ghost" aria-hidden="true">CODE</div>
+      <h2 class="title">GitHub <span class="hot">activity</span></h2>
+      <p class="lead">A snapshot of what I write and where. Edit the numbers in <code>js/data.js</code>.</p>
+      <div class="gh-grid">
+        <div class="gh-stats" id="ghStats"></div>
+        <div class="panel">
+          <p class="panel-label">Language breakdown</p>
+          <div id="ghLangs"></div>
+          <a href="#" class="btn btn-hot btn-sm" id="ghLink" target="_blank" rel="noopener">Open GitHub profile</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+      <div class="ghost" aria-hidden="true">STUDY</div>
+      <h2 class="title">Education<span class="hot">.</span></h2>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="section" id="certificates">
+      <div class="ghost" aria-hidden="true">PROOF</div>
+      <h2 class="title">Certificates<span class="hot">.</span></h2>
+      <div class="certs" id="certs"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="ghost" aria-hidden="true">HELLO</div>
+      <h2 class="title" id="contactHead"></h2>
+      <p class="lead" id="contactText"></p>
+      <div class="contact-grid">
+        <form class="panel form" id="form" novalidate>
+          <label>Your name<input name="name" required autocomplete="name"></label>
+          <label>Your email<input name="email" type="email" required autocomplete="email"></label>
+          <label>Message<textarea name="message" rows="5" required></textarea></label>
+          <button class="btn btn-hot" type="submit">Send message</button>
+          <p class="form-note" id="formNote" role="status"></p>
+        </form>
+        <div class="panel direct">
+          <p class="panel-label">Reach me directly</p>
+          <a id="cEmail" href="#"></a>
+          <p id="cLoc"></p>
+          <div class="socials" id="contactSocials"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="footName"></span>
+    <span id="footYear"></span>
+  </footer>
+
+  <!-- CHAT ASSISTANT -->
+  <button class="ask" id="askBtn" aria-expanded="false" aria-controls="chat"><i>✦</i><span id="askLabel"></span></button>
+  <section class="chat" id="chat" aria-label="Portfolio assistant" hidden>
+    <header><div><strong id="chatName"></strong><small>Answers from this portfolio</small></div><button id="chatClose" aria-label="Close chat">×</button></header>
+    <div class="chat-log" id="chatLog" aria-live="polite"></div>
+    <div class="chat-sugg" id="chatSugg"></div>
+    <form class="chat-form" id="chatForm"><input id="chatInput" placeholder="Ask about projects, skills…" autocomplete="off" aria-label="Your question"><button aria-label="Send">➤</button></form>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
